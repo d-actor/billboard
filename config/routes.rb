@@ -1,27 +1,11 @@
 Rails.application.routes.draw do
-  get 'artists/index'
+  root 'boards#index'
 
-  get 'artists/show'
+  resources :boards do
+    resources :songs
+  end
 
-  get 'artists/new'
-
-  get 'artists/edit'
-
-  get 'songs/index'
-
-  get 'songs/show'
-
-  get 'songs/new'
-
-  get 'songs/edit'
-
-  get 'boards/index'
-
-  get 'boards/show'
-
-  get 'boards/new'
-
-  get 'boards/edit'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope 'songs/:song_id', as: 'song' do
+    resources :artists
+  end
 end

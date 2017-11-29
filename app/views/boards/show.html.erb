@@ -1,2 +1,5 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1 class="center white-text"><%= @board.name %></h1>
+<hr>
+
+<hr>
+<%= button_to 'Back', boards_path, method: :get %>

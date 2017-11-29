@@ -1,2 +1,9 @@
-<h1>Boards#index</h1>
-<p>Find me in app/views/boards/index.html.erb</p>
+<h1 class="center white-text">Music Billboards!</h1>
+<hr>
+<p class="center white-text">Click a billboard to view details</p>
+<hr>
+<ul class="center white-text">
+  <% @boards.each do |board| %>
+  <li><%= link_to board.name, board_path(board) %></li>
+  <% end %>
+</ul>
