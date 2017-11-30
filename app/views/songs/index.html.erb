@@ -4,15 +4,15 @@
 <ol class="center white-text">
 <% @songs.each do |song| %>
   <li>
+    <%= song.artist %>
+    <p> - </p>
     <%= song.name %>
+    <br>
+    <br>
   </li>
+
 <% end %>
 </ol>
-<div class="white-text">
-  <% @songs.artists.each do |song| %>
-    <%= render 'artists/artist', { artist: name } %>
-  <% end %>
-</div>
 
 <hr>
 <%= button_to 'Back', boards_path, method: :get %>

@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_song
+  before_action :set_song, only: [:show]
 
   def new
     @artist = Artist.new
@@ -21,6 +21,6 @@ end
   end
 
   def artist_params
-    params.require(:artist).permit(:name)
+    params.require(:artist).permit(:name, :song_id)
   end
 end
