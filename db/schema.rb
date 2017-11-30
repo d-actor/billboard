@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 20171129221508) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.bigint "song_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_artists_on_song_id"
   end
 
   create_table "boards", force: :cascade do |t|
@@ -35,5 +37,6 @@ ActiveRecord::Schema.define(version: 20171129221508) do
     t.index ["board_id"], name: "index_songs_on_board_id"
   end
 
+  add_foreign_key "artists", "songs"
   add_foreign_key "songs", "boards"
 end

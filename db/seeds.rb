@@ -6,13 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-300.times do
-  Artist.create(
-    name: Faker::RockBand.name,
-    board_id: Faker::Number.between(1, 10)
-  )
-end
-
 10.times do
   Board.create(
     name: Faker::RickAndMorty.character,
@@ -24,4 +17,11 @@ end
     name: Faker::Hipster.word,
     board_id: Faker::Number.between(1, 10)
     )
+end
+
+300.times do
+  Artist.create(
+    name: Faker::RockBand.name,
+    song_id: Faker::Number.between(1, 10)
+  )
 end

@@ -1,17 +1,18 @@
 class ArtistsController < ApplicationController
   before_action :set_song
 
-  def index
-  end
-
-  def show
-  end
-
   def new
+    @artist = Artist.new
   end
 
-  def edit
+def create
+  @artist = @song.artists.new(artist_params)
+  if @artist.save
+    redirect_to board_song_path(@song.board_id, @song)
+  else
+    render :new
   end
+end
 
   private
 
@@ -22,5 +23,4 @@ class ArtistsController < ApplicationController
   def artist_params
     params.require(:artist).permit(:name)
   end
-
 end
