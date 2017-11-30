@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show]
 
   def index
-    @songs = @board.songs
+    @songs = @board.songs.limit(10)
   end
 
   def show

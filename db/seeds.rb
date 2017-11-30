@@ -19,9 +19,12 @@ end
     )
 end
 
+@x = 0
+
 300.times do
+  @x += 1
   Artist.create(
     name: Faker::RockBand.name,
-    song_id: Faker::Number.between(1, 300)
+    song_id: @x,
   )
 end

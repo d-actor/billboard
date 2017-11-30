@@ -5,14 +5,14 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
   end
 
-def create
-  @artist = @song.artists.new(artist_params)
-  if @artist.save
-    redirect_to board_song_path(@song.board_id, @song)
-  else
-    render :new
+  def create
+    @artist = @song.artists.new(artist_params)
+    if @artist.save
+      redirect_to board_song_path(@song.board_id, @song)
+    else
+      render :new
+    end
   end
-end
 
   private
 

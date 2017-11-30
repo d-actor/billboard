@@ -1,12 +1,11 @@
 <h1 class="center white-text"><%= @board.name %></h1>
 <hr>
-
 <ol class="center white-text">
 <% @songs.each do |song| %>
   <li>
-    <%= song.artist %>
-    <p> - </p>
     <%= song.name %>
+    -
+    <%= song.artist.name %>
     <br>
     <br>
   </li>
@@ -15,4 +14,4 @@
 </ol>
 
 <hr>
-<%= button_to 'Back', boards_path, method: :get %>
+<h4 class="center"><%= button_to 'Back', boards_path, method: :get %></h4>
