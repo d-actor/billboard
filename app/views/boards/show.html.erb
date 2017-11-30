@@ -1,5 +1,9 @@
 <h1 class="center white-text"><%= @board.name %></h1>
 <hr>
 
+<% @board.songs.each do |song| %>
+  <%= render 'songs/song', { song: name } %>
+<% end %>
+
 <hr>
 <%= button_to 'Back', boards_path, method: :get %>

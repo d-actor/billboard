@@ -4,6 +4,6 @@
 <hr>
 <ul class="center white-text">
   <% @boards.each do |board| %>
-  <li><%= link_to board.name, board_path(board) %></li>
+  <li><%= link_to board.name, board_songs_path(board) %></li>
   <% end %>
 </ul>
