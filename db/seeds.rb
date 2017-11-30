@@ -9,6 +9,7 @@
 300.times do
   Artist.create(
     name: Faker::RockBand.name,
+    board_id: Faker::Number.between(1, 10)
   )
 end
 
