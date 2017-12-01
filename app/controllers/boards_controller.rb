@@ -5,10 +5,6 @@ class BoardsController < ApplicationController
     @boards = Board.all
   end
 
-  def show
-    @board = Board.find(params[:id])
-  end
-
   def new
     @board = Board.new
   end
@@ -19,17 +15,17 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(board_params)
     if @board.save
-      redirect_to board_path @board
+      redirect_to boards_path @board
     else
-      render partial: "form"
+      render :new
     end
   end
 
   def update
     if @board.update(board_params)
-      redirect_to board_path @board
+      redirect_to boards_path @board
     else
-      render partial: "form"
+      render :edit
     end
   end
 

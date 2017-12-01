@@ -1,13 +1,19 @@
 <h1 class="center white-text"><%= @board.name %></h1>
+<h5 class="center blue-text"><%= button_to 'Edit', edit_board_path(@board), method: :get %></h5>
+<h5 class="center blue-text"><%= button_to 'Delete', @board, method: :delete %></h5>
 <hr>
 <ol class="center white-text">
 <% @songs.each do |song| %>
   <li>
     <%= song.name %>
-    -
+    <%= link_to 'Edit', edit_board_song_path(@board, song) %>
+     - by -
     <%= song.artist.name %>
+    <%= link_to 'Edit', edit_song_artist_path(song, song.artist) %>
     <br>
     <br>
+    <%= link_to 'Delete' %>
+    <!-- make this work -->
   </li>
 
 <% end %>

@@ -1,2 +1,14 @@
-<h1>Boards#edit</h1>
-<p>Find me in app/views/boards/edit.html.erb</p>
+<h2 class="center white-text">Edit Chart</h2>
+<hr>
+<div class="container white">
+  <%= form_for @board do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <div class="center blue-text">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+<hr>
+<h4 class="center blue-text"><%= button_to 'Back', boards_path, method: :get %></h4>

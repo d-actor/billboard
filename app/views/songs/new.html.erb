@@ -1,14 +1,18 @@
 <h2 class="center white-text">New Song</h2>
 <hr>
 <div class="container white">
-  <%= form_for @song do |f| %>
+  <%= form_for [@board, @song] do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br>
+    <%= f.fields_for :artist_attributes do |a| %>
+      <%= a.label :name %>
+      <%= a.text_field :name %>
+    <% end %>
     <div class="center blue-text">
-      <%= f.submit %>
+    <%= f.submit %>
     </div>
   <% end %>
 </div>
 <hr>
-<h4 class="center blue-text"><%= button_to 'Back', boards_songs_path(board), method: :get %></h4>
+<h4 class="center blue-text"><%= button_to 'Back', board_songs_path(@board), method: :get %></h4>
