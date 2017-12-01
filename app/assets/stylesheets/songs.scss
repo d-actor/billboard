@@ -1,3 +1,16 @@
 // Place all the styles related to the songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nav_btn {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+ol {
+  border: 1px solid white;
+}
+
+.li_song {
+  border-bottom: 1px solid white;
+}

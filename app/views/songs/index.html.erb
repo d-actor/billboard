@@ -1,27 +1,28 @@
-<h1 class="center white-text"><%= @board.name %></h1>
-<h5 class="center blue-text"><%= button_to 'Edit', edit_board_path(@board), method: :get %></h5>
-<h5 class="center blue-text"><%= button_to 'Delete', @board, method: :delete %></h5>
-<hr>
-<ol class="center white-text">
-<% @songs.each do |song| %>
-  <li>
-    <%= song.name %>
-    <%= link_to 'Edit', edit_board_song_path(@board, song) %>
-     - by -
-    <%= song.artist.name %>
-    <%= link_to 'Edit', edit_song_artist_path(song, song.artist) %>
-    <br>
-    <br>
-    <%= link_to 'Delete' %>
-    <!-- make this work -->
-  </li>
+<div class="container black">
+  <h1 class="center white-text"><%= @board.name %></h1>
+  <h5 class="center nav_btn"><%= button_to 'Edit', edit_board_path(@board), method: :get, class: "btn waves-effect waves-light grey darken-3" %></h5>
+  <h5 class="center nav_btn"><%= button_to 'Delete', @board, method: :delete, class: "btn waves-effect waves-light grey darken-3" %></h5>
+  <h5 class="center nav_btn"><%= button_to 'Home', root_path, method: :get, class: "btn waves-effect waves-light grey darken-3" %></h5>
+  <hr>
+  <ol class="center white-text">
+  <% @songs.each do |song| %>
+    <li class="li_song">
+      <%= song.name %>
+      <%= link_to 'Edit', edit_board_song_path(@board, song) %>
+       - by -
+      <%= song.artist.name %>
+      <%= link_to 'Edit', edit_song_artist_path(song, song.artist) %>
+      <br>
+      <br>
+      <%= link_to 'Delete' %>
+      <!-- make this work -->
+    </li>
 
-<% end %>
-</ol>
+  <% end %>
+  </ol>
 
-<div class="center">
-  <h5 class="blue-text"><%= button_to 'Add A Song', new_board_song_path, method: :get %></h5>
+  <h5 class=" center blue-text"><%= button_to 'Add A Song', new_board_song_path, method: :get, class: "btn waves-effect waves-light grey darken-3" %></h5>
+
+  <hr>
+  <h4 class="center blue-text"><%= button_to 'Back', boards_path, method: :get, class: "btn waves-effect waves-light grey darken-3" %></h4>
 </div>
-
-<hr>
-<h4 class="center blue-text"><%= button_to 'Back', boards_path, method: :get %></h4>
