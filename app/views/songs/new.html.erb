@@ -1,2 +1,14 @@
-<h1>Songs#new</h1>
-<p>Find me in app/views/songs/new.html.erb</p>
+<h2 class="center white-text">New Song</h2>
+<hr>
+<div class="container white">
+  <%= form_for @song do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <div class="center blue-text">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+<hr>
+<h4 class="center"><%= button_to 'Back', boards_songs_path(board), method: :get %></h4>
